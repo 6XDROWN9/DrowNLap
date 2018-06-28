@@ -36,8 +36,8 @@ client.on('message', message => {
         
         
         
-        msg.react('❤').then(r=>{
-        msg.react('💛').then(r=>{
+        msg.react(':ugandanknuckles:').then(r=>{
+        msg.react('ugandanknuckles').then(r=>{
         msg.react('💚').then(r=>{
         msg.react('🖤').then(r=>{
         msg.react('💜').then(r=>{
