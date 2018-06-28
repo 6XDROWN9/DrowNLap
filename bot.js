@@ -32,16 +32,23 @@ client.on('message', message => {
     if(!message.channel.guild) return;
        if(message.content.startsWith(prefix + 'color')) {
        if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       message.channel.sendFile(`https://media.discordapp.net/attachments/444071272503050241/450979273206005780/colors.png`).then(msg => {
+       message.channel.sendFile(`https://i.imgur.com/3NXPKwF.png`).then(msg => {
         
         
         
         msg.react(':ugandanknuckles:').then(r=>{
         msg.react('ugandanknuckles').then(r=>{
-        msg.react('💚').then(r=>{
         msg.react('🖤').then(r=>{
-        msg.react('💜').then(r=>{
+        msg.react('❤️').then(r=>{
+        msg.react('💛').then(r=>{
+        msg.react('💚').then(r=>{
         msg.react('💙').then(r=>{
+        msg.react('🐸').then(r=>{
+        msg.react('💩').then(r=>{
+        msg.react('😡').then(r=>{
+        msg.react('😈').then(r=>{
+        msg.react('💀').then(r=>{
+        msg.react('😜').then(r=>{
         msg.react('❌').then(r=>{
 
 
@@ -51,22 +58,22 @@ client.on('message', message => {
 
     
      
-     let activeFilter = (reaction, user) => reaction.emoji.name === '❤' && user.id === message.author.id;
+     let activeFilter = (reaction, user) => reaction.emoji.name === '🖤' && user.id === message.author.id;
      
        let active = msg.createReactionCollector(activeFilter, { time: 15000 });
       
                                     //red                    
                                active.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "red"))
+                                   message.member.addRole(message.guild.roles.find("name", "Black"))
                                    
                                    
                             
                                  
 
      const embed = new Discord.RichEmbed() 
-      .setColor("#ff0000")
+      .setColor("#000000")
 
-      .setDescription("**:art:تم اعطائك اللون الاحمر**")
+      .setDescription("**:art:تم اعطائك اللون الأسود**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -77,22 +84,22 @@ message.channel.sendEmbed(embed).then();
 //لون اسود
 
 
- let y1Filter = (reaction, user) => reaction.emoji.name === '🖤' && user.id === message.author.id;
+ let y1Filter = (reaction, user) => reaction.emoji.name === '❤️' && user.id === message.author.id;
      
        let y1 = msg.createReactionCollector(y1Filter, { time: 15000 });
       
                                     //t                    
                                y1.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "black"))
+                                   message.member.addRole(message.guild.roles.find("name", "D-Red"))
                                    
                                    
                             
                                  
 
      const embed = new Discord.RichEmbed() 
-      .setColor("#0c0606")
+      .setColor("#FF0000")
 
-      .setDescription("**:art:تم اعطائك اللون الاسود**")
+      .setDescription("**:art:تم اعطائك اللون الأحمر الغامق**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -101,14 +108,14 @@ message.channel.sendEmbed(embed).then();
 
    })
 
- //لون اصفر 
+ //لون احمر 
 let y2Filter = (reaction, user) => reaction.emoji.name === '💛' && user.id === message.author.id;
      
        let y2 = msg.createReactionCollector(y2Filter, { time: 15000 });
       
                                                     
                                y2.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "yellow"))
+                                   message.member.addRole(message.guild.roles.find("name", "Yellow"))
                                    
                                    
                             
@@ -134,7 +141,7 @@ let y3Filter = (reaction, user) => reaction.emoji.name === '💚' && user.id ===
       
                                                     
                                y3.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y1"))
+                                   message.member.addRole(message.guild.roles.find("name", "D-Green"))
                                    
                                    
                             
@@ -148,66 +155,179 @@ let y3Filter = (reaction, user) => reaction.emoji.name === '💚' && user.id ===
 
 message.channel.sendEmbed(embed).then();
  })
-    //الون البنفسجي
+    //الون اللبني
 
-let y4Filter = (reaction, user) => reaction.emoji.name === '💜' && user.id === message.author.id;
+let y4Filter = (reaction, user) => reaction.emoji.name === '💙' && user.id === message.author.id;
      
        let y4 = msg.createReactionCollector(y4Filter, { time: 15000 });
       
                                                     
                                y4.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y2"))
+                                   message.member.addRole(message.guild.roles.find("name", "Aqua"))
                                    
                                    
                             
                                  
 
      const embed = new Discord.RichEmbed() 
-      .setColor("#9e1bce")
+      .setColor("#00BFFF")
 
-      .setDescription("**:art:تم اعطائك اللون البنفسجي**")
+      .setDescription("**:art:تم اعطائك اللون اللبني**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
 })
    //الون الازرق فاتح
 
-let y5Filter = (reaction, user) => reaction.emoji.name === '💙' && user.id === message.author.id;
+let y5Filter = (reaction, user) => reaction.emoji.name === '🐸' && user.id === message.author.id;
      
        let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
       
                                                     
                                y5.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y3"))
+                                   message.member.addRole(message.guild.roles.find("name", "Green"))
                                    
                                    
                             
                                  
 
      const embed = new Discord.RichEmbed() 
-      .setColor("#0bc0f7")
+      .setColor("#00FF00")
 
-      .setDescription("**:art:تم اعطائك اللون اللبني**")
+      .setDescription("**:art:تم اعطائك اللون الأخضر**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
 
 })
+          
+let y5Filter = (reaction, user) => reaction.emoji.name === '💩' && user.id === message.author.id;
+     
+       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+      
+                                                    
+                               y5.on("collect", r => {
+                                   message.member.addRole(message.guild.roles.find("name", "Brown"))
+                                   
+                                   
+                            
+                                 
+
+     const embed = new Discord.RichEmbed() 
+      .setColor("#3B170B")
+
+      .setDescription("**:art:تم اعطائك اللون البني**")
+      .setFooter(message.author.tag , message.author.avatarURL)
+
+message.channel.sendEmbed(embed).then();
+
+})
+
+let y5Filter = (reaction, user) => reaction.emoji.name === '😡' && user.id === message.author.id;
+     
+       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+      
+                                                    
+                               y5.on("collect", r => {
+                                   message.member.addRole(message.guild.roles.find("name", "Red"))
+                                   
+                                   
+                            
+                                 
+
+     const embed = new Discord.RichEmbed() 
+      .setColor("#FF0000")
+
+      .setDescription("**:art:تم اعطائك اللون الأحمر**")
+      .setFooter(message.author.tag , message.author.avatarURL)
+
+message.channel.sendEmbed(embed).then();
+
+})
+          
+let y5Filter = (reaction, user) => reaction.emoji.name === '😈' && user.id === message.author.id;
+     
+       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+      
+                                                    
+                               y5.on("collect", r => {
+                                   message.member.addRole(message.guild.roles.find("name", "Purple"))
+                                   
+                                   
+                            
+                                 
+
+     const embed = new Discord.RichEmbed() 
+      .setColor("#A901DB")
+
+      .setDescription("**:art:تم اعطائك اللون الأرجواني**")
+      .setFooter(message.author.tag , message.author.avatarURL)
+
+message.channel.sendEmbed(embed).then();
+
+})
+
+let y5Filter = (reaction, user) => reaction.emoji.name === '💀' && user.id === message.author.id;
+     
+       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+      
+                                                    
+                               y5.on("collect", r => {
+                                   message.member.addRole(message.guild.roles.find("name", "White"))
+                                   
+                                   
+                            
+                                 
+
+     const embed = new Discord.RichEmbed() 
+      .setColor("#ffffff")
+
+      .setDescription("**:art:تم اعطائك اللون الأبيض**")
+      .setFooter(message.author.tag , message.author.avatarURL)
+
+message.channel.sendEmbed(embed).then();
+
+})
+
+let y5Filter = (reaction, user) => reaction.emoji.name === '😜' && user.id === message.author.id;
+     
+       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+      
+                                                    
+                               y5.on("collect", r => {
+                                   message.member.addRole(message.guild.roles.find("name", "Orange"))
+                                   
+                                   
+                            
+                                 
+
+     const embed = new Discord.RichEmbed() 
+      .setColor("#FFBF00")
+
+      .setDescription("**:art:تم اعطائك اللون الأرجواني**")
+      .setFooter(message.author.tag , message.author.avatarURL)
+
+message.channel.sendEmbed(embed).then();
+
+})
+
 let y6Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
      
        let y6 = msg.createReactionCollector(y6Filter, { time: 15000 });
       
                                                     
                                y6.on("collect", r => {
-                                   message.member.removeRole(message.guild.roles.find("name", "red"))
-                                   
-                                   message.member.removeRole(message.guild.roles.find("name", "y3"))
                                    message.member.removeRole(message.guild.roles.find("name", "black"))
-                                   message.member.removeRole(message.guild.roles.find("name", "yellow"))
-                                  message.member.removeRole(message.guild.roles.find("name", "y1"))
-                                  message.member.removeRole(message.guild.roles.find("name", "y2"))
-                                  
-                            
+                                   message.member.removeRole(message.guild.roles.find("name", "D-Red")) 
+                                   message.member.removeRole(message.guild.roles.find("name", "Yellow"))
+                                   message.member.removeRole(message.guild.roles.find("name", "D-Green"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Aqua"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Green"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Brown"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Red"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Purple"))
+                                   message.member.removeRole(message.guild.roles.find("name", "White"))
+                                   message.member.removeRole(message.guild.roles.find("name", "Orange"))                
                                  
 
      const embed = new Discord.RichEmbed() 
