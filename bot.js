@@ -32,12 +32,12 @@ client.on('message', message => {
     if(!message.channel.guild) return;
        if(message.content.startsWith(prefix + 'color')) {
        if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       message.channel.sendFile(`https://i.imgur.com/3NXPKwF.png`).then(msg => {
+       message.channel.sendFile(`https://i.imgur.com/NQy4FI0.png`).then(msg => {
         
         
         
         msg.react('🖤').then(r=>{
-        msg.react('❤️').then(r=>{
+        msg.react('❤').then(r=>{
         msg.react('💛').then(r=>{
         msg.react('💚').then(r=>{
         msg.react('💙').then(r=>{
@@ -133,12 +133,12 @@ message.channel.sendEmbed(embed).then();
                                
                                //الون الاخضر
 
-let y3Filter = (reaction, user) => reaction.emoji.name === '💚' && user.id === message.author.id;
+let dgFilter = (reaction, user) => reaction.emoji.name === '💚' && user.id === message.author.id;
      
-       let y3 = msg.createReactionCollector(y3Filter, { time: 15000 });
+       let dg = msg.createReactionCollector(dgFilter, { time: 15000 });
       
                                                     
-                               y3.on("collect", r => {
+                               dg.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "D-Green"))
                                    
                                    
@@ -155,12 +155,12 @@ message.channel.sendEmbed(embed).then();
  })
     //الون اللبني
 
-let y4Filter = (reaction, user) => reaction.emoji.name === '💙' && user.id === message.author.id;
+let aqFilter = (reaction, user) => reaction.emoji.name === '💙' && user.id === message.author.id;
      
-       let y4 = msg.createReactionCollector(y4Filter, { time: 15000 });
+       let aq = msg.createReactionCollector(aqFilter, { time: 15000 });
       
                                                     
-                               y4.on("collect", r => {
+                               aq.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Aqua"))
                                    
                                    
@@ -177,12 +177,12 @@ message.channel.sendEmbed(embed).then();
 })
    //الون الازرق فاتح
 
-let y5Filter = (reaction, user) => reaction.emoji.name === '🐸' && user.id === message.author.id;
+let grFilter = (reaction, user) => reaction.emoji.name === '🐸' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let gr = msg.createReactionCollector(grFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               gr.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Green"))
                                    
                                    
@@ -199,12 +199,12 @@ message.channel.sendEmbed(embed).then();
 
 })
           
-let y5Filter = (reaction, user) => reaction.emoji.name === '💩' && user.id === message.author.id;
+let brFilter = (reaction, user) => reaction.emoji.name === '💩' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let br = msg.createReactionCollector(brFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               br.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Brown"))
                                    
                                    
@@ -221,12 +221,12 @@ message.channel.sendEmbed(embed).then();
 
 })
 
-let y5Filter = (reaction, user) => reaction.emoji.name === '😡' && user.id === message.author.id;
+let reFilter = (reaction, user) => reaction.emoji.name === '😡' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let re = msg.createReactionCollector(reFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               re.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Red"))
                                    
                                    
@@ -243,12 +243,12 @@ message.channel.sendEmbed(embed).then();
 
 })
           
-let y5Filter = (reaction, user) => reaction.emoji.name === '😈' && user.id === message.author.id;
+let prFilter = (reaction, user) => reaction.emoji.name === '😈' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let pr = msg.createReactionCollector(prFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               pr.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Purple"))
                                    
                                    
@@ -265,12 +265,12 @@ message.channel.sendEmbed(embed).then();
 
 })
 
-let y5Filter = (reaction, user) => reaction.emoji.name === '💀' && user.id === message.author.id;
+let whFilter = (reaction, user) => reaction.emoji.name === '💀' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let wh = msg.createReactionCollector(whFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               wh.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "White"))
                                    
                                    
@@ -287,12 +287,12 @@ message.channel.sendEmbed(embed).then();
 
 })
 
-let y5Filter = (reaction, user) => reaction.emoji.name === '😜' && user.id === message.author.id;
+let orFilter = (reaction, user) => reaction.emoji.name === '😜' && user.id === message.author.id;
      
-       let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
+       let or = msg.createReactionCollector(orFilter, { time: 15000 });
       
                                                     
-                               y5.on("collect", r => {
+                               or.on("collect", r => {
                                    message.member.addRole(message.guild.roles.find("name", "Orange"))
                                    
                                    
