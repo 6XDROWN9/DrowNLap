@@ -28,32 +28,137 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+//profile
+client.on('message', message => {
+var args = message.content.split(" ").slice(1);    
+if(message.content.startsWith(prefix + 'id')) {
+var year = message.author.createdAt.getFullYear()
+var month = message.author.createdAt.getMonth()
+var day = message.author.createdAt.getDate()
+var men = message.mentions.users.first();  
+let args = message.content.split(' ').slice(1).join(' ');
 
-//bc
+var z = message.author;
+}else {
+var z = message.mentions.users.first();
+}
 
-      message.guild.members.forEach(m => {
- if(!message.member.hasPermission('ADMINISTRATOR')) return;
-          var bc = new Discord.RichEmbed()
-          .setAuthor(message.author.username, message.author.avatarURL)
-          .addField(' The server', `${message.guild.name}`, true)
-          .addField(' who sended the messege ', `${message.author.username}!${message.author.discriminator}`, true)
-          .addField(' the messege ', args)
-          .setThumbnail(message.guild.iconURL)
-          .setColor('RANDOM')
-          m.send(`${m}`,{embed: bc});
-      });
-      const Himo = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setTitle('✅| the messege is loading ')
+let d = z.createdAt;          
+let n = d.toLocaleString();   
+let x;                       
+let y;                        
+
+if (z.presence.game !== null) {
+y = `${z.presence.game.name}`;
+} else {
+y = "No Playing... |💤.";
+}
+let embed = new Discord.RichEmbed()
+.setColor("#502faf")
+.addField(': 🔱 | اسمك',`**<@` + `${z.id}` + `>**`, true)
+.addField(': 🛡 | ايديك', "**"+ `${z.id}` +"**",true)
+.addField(': ♨ | Playing','**'+y+'**' , true)
+.addField(': 📛 | تاق حق حسابك',"**#" +  `${z.discriminator}**`,true)
+.addField('**: 📆 | التاريح الذي انشئ فيه حسابك**', message.author.createdAt.toLocaleString())
+.addField("**: ⌚ | تاريخ دخولك للسيرفر**", message.member.joinedAt.toLocaleString())    
+
+.setThumbnail(`${z.avatarURL}`)
+.setFooter(message.author.username, message.author.avatarURL)
+
+message.channel.send({embed});
+    if (!message) return message.reply('**ضع المينشان بشكل صحيح  ❌ **').catch(console.error);
+
+}
+
+);
+//members
+    client.on('message', message => {
+              if (!message.channel.guild) return;
+      if(message.content =='XDmembers')
+      var IzRo = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL) 
+      .setTitle(':tulip:| Members info')
       .addBlankField(true)
-      .addField('♨| i got sended to  ', message.guild.memberCount , true)
-      .addField('📝| the message ', args)
+      .addField(':green_book:| الاونلاين ',
+      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
+      .addField(':closed_book:| دي ان دي',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
+      .addField(':orange_book:| خامل',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
+      .addField(':notebook:| الاوف لاين ',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
+      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
+      message.channel.send(IzRo);
+    });
+
+//BC
+client.on('message', message => {
+var prefix = ".";
+
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc') {
+    if (!args[1]) {
+message.channel.send("**bc <message>**");
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            var bc = new Discord.RichEmbed()
+            .addField('» السيرفر :', `${message.guild.name}`)
+            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
+            .addField(' » الرسالة : ', args)
+            .setColor('#ff0000')
+            // m.send(`[${m}]`);
+            m.send(`${m}`,{embed: bc});
+        });
+    }
+    } else {
+        return;
+    }
+});
+//server
+client.on('message', function(msg) {
+    const prefix = '.'
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
-      message.channel.sendEmbed(embed);
-  }
-  } else {
-      return;
-  }
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+      .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField('🔴**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField('📝**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField('🎤**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+      .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+      .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
+
+//huge
+
+const superagent = require("superagent");
+
+  client.on('message', async message => {
+  if (message.content.startsWith(prefix + 'hu')) {
+    let args = message.content.split(" ").slice(1);
+    let hugUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!hugUser) return message.channel.send("Make sure you mention someone!");
+    const {body} = await superagent
+    .get(`https://nekos.life/api/v2/img/hug`);
+    let hugEmbed = new Discord.RichEmbed()
+    .setTitle("Hug! c:")
+    .setDescription(`**${message.author.username}** hugged **${message.mentions.users.first().username}**!`)
+    .setImage(body.url)
+    .setColor("RANDOM")
+    .setFooter("DROWN IS HERE", client.user.displayAvatarURL);
+
+    message.channel.send(hugEmbed)
+
+}
 });
 
 //games
