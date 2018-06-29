@@ -31,28 +31,30 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 //bc
 
-client.on('message', message => {
-   let embed = new Discord.RichEmbed()
-
-    let args = message.content.split(' ').slice(1).join(' ');
-     if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '=bc') {
-         message.react("✔️")
-          let embed = new Discord.RichEmbed()
-    .setColor("#FF00FF")
-    .setThumbnail(message.author.avatarURL)   
-                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
-                 message.channel.sendEmbed(embed);
-        message.guild.members.forEach(m => {
-            var bc = new Discord.RichEmbed()
-.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
-            .addField('***● Server  :***', `*** → ${message.guild.name}***`)               
-    .setColor('#ff0000')
-                 .addField('ّ', args)
-            m.send(``,{embed: bc});
-        });
-    }
-})
+      message.guild.members.forEach(m => {
+ if(!message.member.hasPermission('ADMINISTRATOR')) return;
+          var bc = new Discord.RichEmbed()
+          .setAuthor(message.author.username, message.author.avatarURL)
+          .addField(' The server', `${message.guild.name}`, true)
+          .addField(' who sended the messege ', `${message.author.username}!${message.author.discriminator}`, true)
+          .addField(' the messege ', args)
+          .setThumbnail(message.guild.iconURL)
+          .setColor('RANDOM')
+          m.send(`${m}`,{embed: bc});
+      });
+      const Himo = new Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL)
+      .setTitle('✅| the messege is loading ')
+      .addBlankField(true)
+      .addField('♨| i got sended to  ', message.guild.memberCount , true)
+      .addField('📝| the message ', args)
+      .setColor('RANDOM')
+      message.channel.sendEmbed(embed);
+  }
+  } else {
+      return;
+  }
+});
 
 //games
 
